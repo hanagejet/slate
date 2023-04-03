@@ -72,10 +72,6 @@ export const Slate = (props: {
 
   const [isFocused, setIsFocused] = useState(ReactEditor.isFocused(editor))
 
-  useEffect(() => {
-    setIsFocused(ReactEditor.isFocused(editor))
-  }, [editor])
-
   useIsomorphicLayoutEffect(() => {
     const fn = () => setIsFocused(ReactEditor.isFocused(editor))
     if (IS_REACT_VERSION_17_OR_ABOVE) {
